@@ -1,22 +1,37 @@
 <template>
-  <div class='row'>
-    <div class='col-xs-12'>
-      <select class="pull-right" v-model="locale" style="margin-top: 10px;">
-        <option v-for="locale in availableLocales" :value="locale">{{ locale | uppercase }}</option>
-      </select>
 
-      <h1>{{ $t('title') }}</h1>
+  <b-navbar toggleable="md" type="dark" variant="info">
 
-      <ul class="nav nav-pills">
-        <li :class="activeOn(['root_path'])">
-          <router-link :to="{ name: 'root_path' }">{{ $t('nav.homepage') }}</router-link>
-        </li>
-        <li :class="activeOn(['musicians_path', 'musician_path'])">
-          <router-link :to="{ name: 'musicians_path' }">{{ $t('nav.musicians') }}</router-link>
-        </li>
-      </ul>
-    </div>
-  </div>
+    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+
+    <b-collapse is-nav id="nav_collapse">
+
+      <b-navbar-nav>
+
+        <b-nav-item-dropdown :class="activeOn(['about_path'])">
+          <template slot="button-content">
+            {{ $t('nav.about.company') }}
+          </template>
+          <b-dropdown-item href="/about">{{ $t('nav.about.us') }}</b-dropdown-item>
+          <b-dropdown-item href="/about/certificate">{{ $t('nav.about.certificate') }}</b-dropdown-item>
+          <b-dropdown-item href="/about/references">{{ $t('nav.about.references') }}</b-dropdown-item>
+          <b-dropdown-item href="/about/feedbacks">{{ $t('nav.about.feedbacks') }}</b-dropdown-item>
+        </b-nav-item-dropdown>
+        <b-nav-item-dropdown :class="activeOn(['doors_path'])">
+          <template slot="button-content">
+            {{ $t('nav.doors.catalog') }}
+          </template>
+          <b-dropdown-item href="/products">{{ $t('nav.products') }}</b-dropdown-item>
+          <b-dropdown-item href="/doors/fasad">{{ $t('nav.doors.fasad') }}</b-dropdown-item>
+          <b-dropdown-item href="/doors/appointment">{{ $t('nav.doors.appointment') }}</b-dropdown-item>
+          <b-dropdown-item href="/doors/price">{{ $t('nav.doors.price') }}</b-dropdown-item>
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
+
+    </b-collapse>
+</b-navbar>
+
+
 </template>
 
 <script>

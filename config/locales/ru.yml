@@ -8,6 +8,24 @@ en:
     acdc: "AC/DC"
   vue:
     front:
+      title: "FPD"
+      nav:
+        about:
+            company: "О компании"
+            us: "О нас"
+            certificate: "Сертификаты"
+            references: "Благодарственные письма"
+            feedbacks: "Отзывы покупателей"
+            partners: "Партнеры"
+        products: "Продукция"
+        doors:
+            catalog: "Каталог дверей"
+            fasad: "По отделке"
+            appointment: "По назначению"
+            price: "По цене"
+      home:
+        title: "This is the Home page"
+        content: "Lorem ipsum dolor sit amet, you know the song..."
     admin:
       title: "Admin"
       save: "Save"
