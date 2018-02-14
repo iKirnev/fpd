@@ -8,24 +8,16 @@
 
       <b-navbar-nav>
 
-        <b-nav-item-dropdown :class="activeOn(['about_path'])">
+        <b-nav-item-dropdown :class="activeOn(['about_us_path','about_certificate_path','about_references_path','about_feedbacks_path'])">
           <template slot="button-content">
             {{ $t('nav.about.company') }}
           </template>
-          <b-dropdown-item href="/about">{{ $t('nav.about.us') }}</b-dropdown-item>
-          <b-dropdown-item href="/about/certificate">{{ $t('nav.about.certificate') }}</b-dropdown-item>
-          <b-dropdown-item href="/about/references">{{ $t('nav.about.references') }}</b-dropdown-item>
-          <b-dropdown-item href="/about/feedbacks">{{ $t('nav.about.feedbacks') }}</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'about_us_path' }">{{ $t('nav.about.us') }}</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'about_certificate_path' }">{{ $t('nav.about.certificate') }}</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'about_references_path' }">{{ $t('nav.about.references') }}</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'about_feedbacks_path' }">{{ $t('nav.about.feedbacks') }}</b-dropdown-item>
         </b-nav-item-dropdown>
-        <b-nav-item-dropdown :class="activeOn(['doors_path'])">
-          <template slot="button-content">
-            {{ $t('nav.doors.catalog') }}
-          </template>
-          <b-dropdown-item href="/products">{{ $t('nav.products') }}</b-dropdown-item>
-          <b-dropdown-item href="/doors/fasad">{{ $t('nav.doors.fasad') }}</b-dropdown-item>
-          <b-dropdown-item href="/doors/appointment">{{ $t('nav.doors.appointment') }}</b-dropdown-item>
-          <b-dropdown-item href="/doors/price">{{ $t('nav.doors.price') }}</b-dropdown-item>
-        </b-nav-item-dropdown>
+        <b-nav-item :to="{ name: 'products_path' }">{{ $t('nav.products') }}</b-nav-item>
       </b-navbar-nav>
 
     </b-collapse>

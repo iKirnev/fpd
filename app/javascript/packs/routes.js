@@ -15,11 +15,11 @@ const router = new VueRouter({
   base: `${I18n.prefix}`,
   routes: [
     { path: '/', component: HomeIndex, name: 'root_path' },
-    { path: '/about', component: HomeAbout, name: 'about_path' },
-    { path: '/about/certificate', component: HomeAbout, name: 'about_path' },
-    { path: '/about/references', component: HomeAbout, name: 'about_path' },
-    { path: '/about/feedbacks', component: HomeAbout, name: 'about_path' },
-    { path: '/products', component: HomeProducts, name: 'doors_path' },
+    { path: '/about/us', component: HomeAbout, name: 'about_us_path' },
+    { path: '/about/certificate', component: HomeAbout, name: 'about_certificate_path' },
+    { path: '/about/references', component: HomeAbout, name: 'about_references_path' },
+    { path: '/about/feedbacks', component: HomeAbout, name: 'about_feedbacks_path' },
+    { path: '/products', component: HomeProducts, name: 'products_path' },
     { path: '/doors/:by', component: DoorsIndex, name: 'doors_path' }
   ]
 });
