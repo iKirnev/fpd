@@ -17,6 +17,7 @@
         locale: '<%= I18n.locale %>',
         availableLocales: <%= raw(I18n.available_locales.map {|loc| loc.to_s}) %>
       }
+      var navLeftData = <%= @left_nav_data.to_json.html_safe %>
     </script>
   </head>
   <body class='front'>
