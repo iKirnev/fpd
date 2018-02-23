@@ -8,6 +8,8 @@ import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue);
 import NavTop from './components/shared/_nav_top';
 Vue.component('nav-top', NavTop);
+import NavLeft from './components/shared/_nav_left';
+Vue.component('nav-left', NavLeft);
 /*
 $.ajaxSetup({
   beforeSend: function(xhr) {

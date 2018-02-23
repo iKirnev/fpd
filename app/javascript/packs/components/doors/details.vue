@@ -2,8 +2,7 @@
   <div class='container'>
     <nav-top></nav-top>
     <div class='row'>
-      <nav-left></nav-left>
-      <div class='col-md-8'>
+      <div class='col-xs-12'>ss
         <h2>{{ $t('home.title') }}</h2>
         <p>{{ $t('home.content') }}</p>
       </div>
