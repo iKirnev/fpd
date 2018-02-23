@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    render template: 'application'
+    @left_nav_data = {uses: Use.all, stuffs: Stuff.all}
+    render template: 'tmp'
   end
 
 end
