@@ -3,10 +3,10 @@ development:
   encoding: utf8mb4
   collation: utf8mb4_unicode_ci
   database: fpd
-  socket: /var/run/mysqld/mysqld.sock
+  socket: /tmp/mysql.sock
   host: localhost
-  username: root
-  password: "12345"
+  username: user
+  password: "xxxx"
 
 test:
   adapter: mysql2
@@ -15,8 +15,8 @@ test:
   database: fpd
   socket: /var/run/mysqld/mysqld.sock
   host: localhost
-  username: root
-  password: "12345"
+  username: user
+  password: "xxxx"
 
 production:
     adapter: mysql2
@@ -25,5 +25,5 @@ production:
     database: fpd
     socket: /var/run/mysqld/mysqld.sock
     host: localhost
-    username: root
-    password: "12345"
+    username: user
+    password: "xxxx"
