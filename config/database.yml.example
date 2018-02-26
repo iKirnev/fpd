@@ -3,7 +3,7 @@ development:
   encoding: utf8mb4
   collation: utf8mb4_unicode_ci
   database: fpd
-  socket: /tmp/mysql.sock
+  socket: /var/run/mysqld/mysqld.sock
   host: localhost
   username: user
   password: "xxxx"
