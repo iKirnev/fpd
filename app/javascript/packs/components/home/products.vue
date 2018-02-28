@@ -1,6 +1,8 @@
 <template>
-  <div class='container'>
-    <nav-top></nav-top>
+  <div class="wrapper index-page">
+    <header>
+      <nav-top></nav-top>
+    </header>
     <div class='row'>
       <nav-left></nav-left>
       <div class='col-md-8'>

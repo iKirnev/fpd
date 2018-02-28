@@ -10,6 +10,7 @@
     "mocha": "^4.0.1",
     "mocha-webpack": "^1.0.1",
     "vue": "^2.5.9",
+    "vue-awesome-swiper": "^3.1.2",
     "vue-i18n": "^7.3.0",
     "vue-loader": "^13.5.0",
     "vue-router": "^2.7.0",

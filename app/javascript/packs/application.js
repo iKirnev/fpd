@@ -6,10 +6,16 @@ import './filters/strings.js';
 import helpers from './helpers';
 import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue);
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
+import MainSwiper from './components/shared/_main_swiper';
+Vue.component('main-swiper', MainSwiper);
 import NavTop from './components/shared/_nav_top';
 Vue.component('nav-top', NavTop);
 import NavLeft from './components/shared/_nav_left';
 Vue.component('nav-left', NavLeft);
+import MyFooter from './components/shared/_my_footer';
+Vue.component('my-footer', MyFooter);
 /*
 $.ajaxSetup({
   beforeSend: function(xhr) {
