@@ -8,14 +8,18 @@ import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue);
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
-import MainSwiper from './components/shared/_main_swiper';
-Vue.component('main-swiper', MainSwiper);
+import VmBackTop from 'vue-multiple-back-top'
+Vue.component(VmBackTop.name, VmBackTop)
 import NavTop from './components/shared/_nav_top';
 Vue.component('nav-top', NavTop);
 import NavLeft from './components/shared/_nav_left';
 Vue.component('nav-left', NavLeft);
 import MyFooter from './components/shared/_my_footer';
 Vue.component('my-footer', MyFooter);
+import Banners from './components/shared/_banners';
+Vue.component('banners', Banners);
+import Bestsellers from './components/shared/_bestsellers';
+Vue.component('bestsellers', Bestsellers);
 /*
 $.ajaxSetup({
   beforeSend: function(xhr) {
