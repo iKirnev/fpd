@@ -2,7 +2,6 @@
   <div class="wrapper index-page">
   	<nav-top></nav-top>
   	<main id="main" role="main">
-        <div class="send-request"><a href="#"></a></div>
         <div class="man-block"></div>
         <vm-back-top><div class="button-top"><span>вверх</span></div></vm-back-top>
         <banners></banners>
