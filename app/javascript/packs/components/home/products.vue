@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper index-page">
+  <div class="wrapper content-page">
     <header>
       <nav-top></nav-top>
     </header>
