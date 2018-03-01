@@ -3,7 +3,8 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-4 col-xs-12">
-          <div class="logo"><a href="/"><img src="/assets/logo.png"></a></div>
+          <div class="logo"><router-link :to="{name: 'root_path'}"><img src="/assets/logo.png"></router-link>
+          </div>
         </div>
         <div class="col-md-4 col-xs-12 back-call"><a class="button" href="tel:+74955457405">ОБРАТНЫЙ ЗВОНОК</a></div>
         <div class="col-md-4 col-xs-12 tel">
