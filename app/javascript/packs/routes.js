@@ -15,6 +15,7 @@ import HomeContacts from './components/home/contacts.vue';
 import DoorsIndex from './components/doors/index.vue';
 import DoorsResult from './components/doors/result.vue';
 import DoorDetails from './components/doors/details.vue';
+import DoorsCalculator from './components/doors/calculator.vue';
 
 const router = new VueRouter({
   mode: 'history',
@@ -33,7 +34,8 @@ const router = new VueRouter({
     { path: '/doors', component: DoorsIndex, name: 'doors_path' },
     { path: '/doors/stuff/:slug', component: DoorsResult, name: 'doors_stuff_path' },
     { path: '/doors/use/:slug', component: DoorsResult, name: 'doors_use_path' },
-    { path: '/door/:slug', component: DoorDetails, name: 'door_details_path' }
+    { path: '/door/:slug', component: DoorDetails, name: 'door_details_path' },
+    { path: '/doors/calculator', component: DoorsCalculator, name: 'doors_calculator_path' }
   ]
 });
 

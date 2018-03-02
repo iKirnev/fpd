@@ -57,6 +57,9 @@ en:
             technical: "Технические"
             fireproof: "Противопожарные"
             latticed: "Решетчатые"
+        services: "Сервисы"
+        doors_calculator: "Калькулятор онлайн"
+
             
       home:
         title: "This is the Home page"
