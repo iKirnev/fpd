@@ -14,6 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+img_storage
 !/log/.keep
 !/tmp/.keep
 
