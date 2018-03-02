@@ -87,9 +87,10 @@ header nav.navbar .navbar-nav li .nav-link:before{display:none}}.footer{border-t
 @media (max-width:767px){.content-page main .container .navbar{margin: auto;}}
 .content-page main .container .navbar{padding:0;}
 .content-page main .container .navbar .navbar-collapse{padding:.5rem 1rem;}
-.content-page .container .navbar{background-color: #e5dada;border-radius: 5px;}
+.content-page .container .navbar{border: 2px solid red;border-radius: 5px;}
+.sidebar-nav h2,h3 {color:#000000;}
 .sidebar-nav h2 {font-size: 20px;}.sidebar-nav h3 {font-size: 16px;}
-.sidebar-nav a {font-size: 13px;font-family:"Segoe UI",Arial,sans-serif;text-decoration:none;display:block;padding:2px 5px 1px 6px}
-.sidebar-nav a:hover,.sidebar-nav a:focus {color:#000000;background-color:#cccccc;}
-.sidebar-nav a.active {background-color:#cccccc;color:#ffffff}
-@media (min-width:1170px){.content-page main .container .navbar{position:absolute;margin-left:-190px;}}
+.sidebar-nav a {color:#000000;font-size: 13px;font-family:"Segoe UI",Arial,sans-serif;text-decoration:none;display:block;padding:2px 5px 1px 6px}
+.sidebar-nav a:hover,.sidebar-nav a:focus {}
+.sidebar-nav a.active {color:red}
+@media (min-width:1170px){.content-page main .container .navbar{position:absolute;margin-left:-180px;}}
