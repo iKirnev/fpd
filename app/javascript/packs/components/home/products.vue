@@ -20,7 +20,7 @@
                 <div class="image"><img src="/assets/door-one.png"></div>
                 <p>Мангалы</p><span>от 7600 руб.</span></a>
                <a class="catalog-block__list-content-item" href="#">
-                <div class="image"><img src="/assets/door-one.png"></div>
+                <div class="image"><img src="/assets/img_storage/hover/ekr.png"></div>
                 <p>Козырьки</p><span>от 7600 руб.</span></a><a class="catalog-block__list-content-item" href="#">
                 <div class="image"><img src="/assets/img_storage/stairs/screw/IMG_4436.jpeg"></div>
                 <p>Лестницы</p><span>от 7600 руб.</span></a>
