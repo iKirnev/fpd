@@ -6,12 +6,12 @@
           <b-dropdown-divider></b-dropdown-divider>
           <b-nav-text><h3>{{ $t('nav_left.by_stuff') }}</h3></b-nav-text>
           <template v-for="stuff in stuffs">
-            <b-nav-item :to="{ name: 'doors_stuff_path', params: { slug: `${stuff.id}-${stuff.name}` } }">{{ $t(`nav_left.stuff.${stuff.name}`) }}</b-nav-item>
+            <b-nav-item @click='select' :to="{ name: 'doors_result_path', params: { by: 'stuff', slug: `${stuff.id}-${stuff.name}` } }">{{ $t(`nav_left.stuff.${stuff.name}`) }}</b-nav-item>
           </template>
           <b-dropdown-divider></b-dropdown-divider>
           <b-nav-text><h3>{{ $t('nav_left.by_use') }}</h3></b-nav-text>
           <template v-for="use in uses">
-            <b-nav-item :to="{ name: 'doors_use_path', params: { slug: `${use.id}-${use.name}` } }">{{ $t(`nav_left.use.${use.name}`) }}</b-nav-item>
+            <b-nav-item @click='select' :to="{ name: 'doors_result_path', params: { by: 'use', slug: `${use.id}-${use.name}` } }">{{ $t(`nav_left.use.${use.name}`) }}</b-nav-item>
           </template>
           <b-dropdown-divider></b-dropdown-divider>
           <b-nav-text><h3>{{ $t('nav_left.services') }}</h3></b-nav-text>
@@ -27,8 +27,12 @@ export default {
   data: function() {
     return navLeftData;
   },
-  
+  updated: function() {console.log('*********updated***********************');
+  },
   methods: {
+    select: function() {
+      this.$router.push({path: this.$route.path})
+    }
   }
 }
 </script>

@@ -4,9 +4,9 @@ import store from './vuex';
 import router from './routes.js';
 import './filters/strings.js';
 import helpers from './helpers';
-import EventBus from './event_bus';
+//import EventBus from './event_bus';
 // Expose EventBus to window for JQuery access (ActionCable)
-window.EventBus = EventBus;
+//window.EventBus = EventBus;
 
 import NavTop from './components/shared/_nav_top';
 Vue.component('nav-top', NavTop);

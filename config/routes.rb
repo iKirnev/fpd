@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
     namespace :api, :defaults => { :format => 'json' } do
       resources :musicians, only: [:index, :show]
+      resources :doors, only: [:result, :show]
+      get '/doors/:by/:slug', :to => 'doors#result'
 
       namespace :admin do
         as :user do

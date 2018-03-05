@@ -32,8 +32,7 @@ const router = new VueRouter({
     { path: '/price', component: HomePrice, name: 'price_path' },
     { path: '/contacts', component: HomeContacts, name: 'contacts_path' },
     { path: '/doors', component: DoorsIndex, name: 'doors_path' },
-    { path: '/doors/stuff/:slug', component: DoorsResult, name: 'doors_stuff_path' },
-    { path: '/doors/use/:slug', component: DoorsResult, name: 'doors_use_path' },
+    { path: '/doors/:by/:slug', component: DoorsResult, name: 'doors_result_path' },
     { path: '/door/:slug', component: DoorDetails, name: 'door_details_path' },
     { path: '/doors/calculator', component: DoorsCalculator, name: 'doors_calculator_path' }
   ]

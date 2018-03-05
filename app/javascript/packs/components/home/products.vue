@@ -10,18 +10,23 @@
               <p></p>
             </div>
             <div class="catalog-block__list">
-               <a class="catalog-block__list-content-item" href="#">
-                <div class="image"><img src="/assets/door-one.png"></div>
-                <p>Двери</p><span>от 7600 руб.</span></a><a class="catalog-block__list-content-item" href="#">
-                <div class="image"><img src="/assets/door-one.png"></div>
-                <p>Решетки</p><span>от 7600 руб.</span></a><a class="catalog-block__list-content-item" href="#">
-                <div class="image"><img src="/assets/door-one.png"></div>
-                <p>Ворота</p><span>от 7600 руб.</span></a><a class="catalog-block__list-content-item" href="#">
-                <div class="image"><img src="/assets/door-one.png"></div>
-                <p>Мангалы</p><span>от 7600 руб.</span></a>
-               <a class="catalog-block__list-content-item" href="#">
+                <router-link :to="{name: 'doors_path'}" class="catalog-block__list-content-item">
+                  <div class="image"><img src="/assets/img_storage/doors/gallery/IMG_5623.JPG"></div>
+                  <p>Двери</p><span>от 7600 руб.</span>
+                </router-link>
+                <a class="catalog-block__list-content-item" href="#">
+                <div class="image"><img src="/assets/img_storage/gates/IMG_5696.JPG"></div>
+                <p>Ворота</p><span>от 7600 руб.</span></a>
+                <a class="catalog-block__list-content-item" href="#">
                 <div class="image"><img src="/assets/img_storage/hover/ekr.png"></div>
-                <p>Козырьки</p><span>от 7600 руб.</span></a><a class="catalog-block__list-content-item" href="#">
+                <p>Козырьки</p><span>от 7600 руб.</span></a>
+                <a class="catalog-block__list-content-item" href="#">
+                <div class="image"><img src="/assets/img_storage/bars/reshetka1-b.jpg"></div>
+                <p>Решетки</p><span>от 7600 руб.</span></a>
+                <a class="catalog-block__list-content-item" href="#">
+                <div class="image"><img src="/assets/img_storage/grill/Мк.19.jpg"></div>
+                <p>Мангалы</p><span>от 7600 руб.</span></a>
+                <a class="catalog-block__list-content-item" href="#">
                 <div class="image"><img src="/assets/img_storage/stairs/screw/IMG_4436.jpeg"></div>
                 <p>Лестницы</p><span>от 7600 руб.</span></a>
             </div>

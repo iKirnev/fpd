@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def index
     @left_nav_data = {uses: Use.all, stuffs: Stuff.all}
-    render template: 'tmp'
+    render template: 'application'
   end
 
 end
