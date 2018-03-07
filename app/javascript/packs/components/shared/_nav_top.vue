@@ -16,7 +16,8 @@
         </div>
       </div>
       <b-navbar class="navbar navbar-expand-lg navbar-light bg-light">
-        <b-navbar-toggle xtarget="nav_collapse"></b-navbar-toggle>
+        <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+        <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav>
             <b-nav-item-dropdown :class="activeOn(['about_us_path','about_certificate_path','about_references_path','about_feedbacks_path'])">
               <template slot="button-content">
@@ -28,12 +29,13 @@
               <b-dropdown-item :to="{ name: 'about_feedbacks_path' }">{{ $t('nav.about.feedbacks') }}</b-dropdown-item>
             </b-nav-item-dropdown>
             <b-nav-item :to="{ name: 'products_path' }" :class="activeOn(['products_path', 'doors_path', 'doors_result_path'])">{{ $t('nav.products') }}</b-nav-item>
-            <b-nav-item to="galleries" :class="activeOn(['galleries_path'])">{{ $t('nav.galleries') }}</b-nav-item>
+            <b-nav-item :to="{ name: 'galleries_path' }" :class="activeOn(['galleries_path'])">{{ $t('nav.galleries') }}</b-nav-item>
             <b-nav-item :to="{ name: 'furniture_path' }" :class="activeOn(['furniture_path'])">{{ $t('nav.furniture') }}</b-nav-item>
             <b-nav-item :to="{ name: 'price_path' }" :class="activeOn(['price_path'])">{{ $t('nav.price') }}</b-nav-item>
             <b-nav-item :to="{ name: 'contacts_path' }" :class="activeOn(['contacts_path'])">{{ $t('nav.contacts') }}</b-nav-item>
             
           </b-navbar-nav>
+        </b-collapse>
       </b-navbar>
     </div>
     <div xclass="send-request"><a href="#"></a></div>
