@@ -19,7 +19,7 @@
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
         <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav>
-            <b-nav-item-dropdown :class="activeOn(['about_us_path','about_certificate_path','about_references_path','about_feedbacks_path'])">
+            <b-nav-item-dropdown :classx="activeOn(['about_us_path','about_certificate_path','about_references_path','about_feedbacks_path'])">
               <template slot="button-content">
                 {{ $t('nav.about.company') }}
               </template>
@@ -28,11 +28,11 @@
               <b-dropdown-item :to="{ name: 'about_references_path' }">{{ $t('nav.about.references') }}</b-dropdown-item>
               <b-dropdown-item :to="{ name: 'about_feedbacks_path' }">{{ $t('nav.about.feedbacks') }}</b-dropdown-item>
             </b-nav-item-dropdown>
-            <b-nav-item :to="{ name: 'products_path' }" :class="activeOn(['products_path'])">{{ $t('nav.products') }}</b-nav-item>
-            <b-nav-item :to="{ name: 'galleries_path' }" :class="activeOn(['galleries_path'])">{{ $t('nav.galleries') }}</b-nav-item>
-            <b-nav-item :to="{ name: 'furniture_path' }" :class="activeOn(['furniture_path'])">{{ $t('nav.furniture') }}</b-nav-item>
-            <b-nav-item :to="{ name: 'price_path' }" :class="activeOn(['price_path'])">{{ $t('nav.price') }}</b-nav-item>
-            <b-nav-item :to="{ name: 'contacts_path' }" :class="activeOn(['contacts_path'])">{{ $t('nav.contacts') }}</b-nav-item>
+            <b-nav-item :to="{ name: 'products_path' }" :classx="activeOn(['products_path'])">{{ $t('nav.products') }}</b-nav-item>
+            <b-nav-item :to="{ name: 'galleries_path' }" :classx="activeOn(['galleries_path'])">{{ $t('nav.galleries') }}</b-nav-item>
+            <b-nav-item :to="{ name: 'furniture_path' }" :classx="activeOn(['furniture_path'])">{{ $t('nav.furniture') }}</b-nav-item>
+            <b-nav-item :to="{ name: 'price_path' }" :classx="activeOn(['price_path'])">{{ $t('nav.price') }}</b-nav-item>
+            <b-nav-item :to="{ name: 'contacts_path' }" :classx="activeOn(['contacts_path'])">{{ $t('nav.contacts') }}</b-nav-item>
             
           </b-navbar-nav>
         </b-collapse>
