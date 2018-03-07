@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <header>
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-4 col-xs-12">
@@ -39,7 +39,7 @@
       </b-navbar>
     </div>
     <div xclass="send-request"><a href="#"></a></div>
-  </div>
+  </header>
 </template>
 
 <script>
