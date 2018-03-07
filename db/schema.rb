@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305111109) do
+ActiveRecord::Schema.define(version: 20180305211109) do
 
   create_table "accessories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20180305111109) do
     t.integer "product_id"
     t.string "name"
     t.string "description"
-    t.decimal "price", precision: 5, scale: 2
+    t.decimal "price", precision: 10, scale: 2
   end
 
   create_table "gallery_photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20180305111109) do
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
     t.string "description"
-    t.decimal "price", precision: 5, scale: 2
+    t.decimal "price", precision: 10, scale: 2
     t.string "model_path"
     t.string "cut_path"
   end

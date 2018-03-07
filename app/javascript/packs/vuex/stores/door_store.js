@@ -16,17 +16,9 @@ const DoorStore = {
   },
   actions: {
     result(context, params) {
-      this._vm.$http.get('/api/doors/use/1-asd').then((response)=>{
+      this._vm.$http.get(`/api/doors/${params.by}/${params.slug}`).then((response)=>{
         context.commit('many', response.data);
       });
-      /*$.ajax({
-        url: `doors`,
-        type: 'get',
-        data: query,
-        success: function(data) {
-          context.commit('many', data)
-        }
-      })*/
     },
     show(context, id) {
       $.ajax({

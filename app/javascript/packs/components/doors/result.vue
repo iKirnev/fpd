@@ -9,13 +9,12 @@
             <div class="catalog-block__title">Железные двери от производителя
               <p></p>
             </div>
-            <template v-for="door in doors">
-              {{ door.name }}
-            </template>
             <div class="catalog-block__list">
-               <a class="catalog-block__list-content-item" href="#">
-                <div class="image"><img src="/assets/img_storage/doors/gallery/IMG_5623.JPG"></div>
-                <p>Решетчатые двери</p><span>от 7600 руб.</span></a>
+              <template v-for="door in doors">
+                <a class="catalog-block__list-content-item" href="#">
+                  <div class="image"><img v-bind:src="'/assets/img_storage/' + door.model_path"></div>
+                  <p>{{ door.name }}</p><span>от {{ door.price }} руб.</span></a>
+              </template>
             </div>
           </div>
         </div>
