@@ -21,7 +21,9 @@ header nav.navbar .navbar-nav li .nav-link{position:relative;font-size:12px;font
 header nav.navbar .navbar-nav li .nav-link:before{content:'';display:block;position:absolute;height:15px;width:1px;background-color:#e5e5e5;right:0;top:50%;margin-top:-7px}
 header nav.navbar .navbar-nav li:last-child .nav-link:after{display:none}
 header nav.navbar .navbar-nav li.active:before{content:'';display:block;position:absolute;background-color:#f84f50;height:4px;width:100%;left:0;top:0}
+@media (min-width:1031px){
 header nav.navbar .navbar-nav li:hover:before{content:'';display:block;position:absolute;background-color:#f84f50;height:4px;width:100%;left:0;top:0}
+}
 @media (max-width:420px){
 header .logo{text-align:center;}
 header .logo img{max-width:95px}
