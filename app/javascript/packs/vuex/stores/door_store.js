@@ -16,7 +16,7 @@ const DoorStore = {
   },
   actions: {
     result(context, params) {
-      this._vm.$http.get(`/api/doors/${params.by}/${params.slug}`).then((response)=>{
+      this._vm.$http.get(`/api/doors/${params.by}/${params.slug.split("-")[0]}`).then((response)=>{
         context.commit('many', response.data);
       });
     },

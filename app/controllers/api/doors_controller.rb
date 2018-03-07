@@ -2,7 +2,7 @@ class Api::DoorsController < Api::ApiController
 
   def result
   	by = params[:by]
-  	id = params[:slug].split('-')[0]
+  	id = params[:id]
     @doors = by == 'stuff' ? Stuff.find(id).products : Use.find(id).products
   end
 
