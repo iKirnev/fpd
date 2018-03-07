@@ -16,8 +16,7 @@
         </div>
       </div>
       <b-navbar class="navbar navbar-expand-lg navbar-light bg-light">
-        <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-        <b-collapse is-nav id="nav_collapse">
+        <b-navbar-toggle xtarget="nav_collapse"></b-navbar-toggle>
           <b-navbar-nav>
             <b-nav-item-dropdown :class="activeOn(['about_us_path','about_certificate_path','about_references_path','about_feedbacks_path'])">
               <template slot="button-content">
@@ -35,7 +34,6 @@
             <b-nav-item :to="{ name: 'contacts_path' }" :class="activeOn(['contacts_path'])">{{ $t('nav.contacts') }}</b-nav-item>
             
           </b-navbar-nav>
-        </b-collapse>
       </b-navbar>
     </div>
     <div xclass="send-request"><a href="#"></a></div>
