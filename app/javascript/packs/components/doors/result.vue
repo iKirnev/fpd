@@ -10,6 +10,9 @@
               <p></p>
             </div>
             <div class="catalog-block__list">
+              <div class="loading" v-if="loading">
+                Loading...
+              </div>
               <template v-for="door in doors">
                 <a class="catalog-block__list-content-item" href="#">
                   <div class="image"><img v-bind:src="'/assets/img_storage/' + door.model_path"></div>

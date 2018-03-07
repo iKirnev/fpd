@@ -2,7 +2,8 @@ const DoorStore = {
   namespaced: true,
   state: {
     doors: [],
-    door: {}
+    door: {},
+    loading: false
   },
   mutations: {
     one(state, data) {
@@ -12,11 +13,17 @@ const DoorStore = {
     many(state, data) {
       state.doors= data.doors;
       return state;
+    },
+    loading(state, val) {
+      state.loading = val;
+      return state.loading;
     }
   },
   actions: {
     result(context, params) {
+      context.commit('loading', true);
       this._vm.$http.get(`/api/doors/${params.by}/${params.slug.split("-")[0]}`).then((response)=>{
+        context.commit('loading', false);
         context.commit('many', response.data);
       });
     },
