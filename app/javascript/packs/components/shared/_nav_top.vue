@@ -15,6 +15,28 @@
           <p>с 9.00 до 22.00 без выходных</p>
         </div>
       </div>
+      <div>
+        <b-navbar type="dark" variant="primary" toggleable>
+          <b-navbar-toggle target="nav_dropdown_collapse"></b-navbar-toggle>
+          <b-collapse is-nav id="nav_dropdown_collapse">
+            <b-navbar-nav>
+              <b-nav-item href="#">Home</b-nav-item>
+              <b-nav-item href="#">Link</b-nav-item>
+              <!-- Navbar dropdowns -->
+              <b-nav-item-dropdown text="Lang" right>
+                <b-dropdown-item href="#">EN</b-dropdown-item>
+                <b-dropdown-item href="#">ES</b-dropdown-item>
+                <b-dropdown-item href="#">RU</b-dropdown-item>
+                <b-dropdown-item href="#">FA</b-dropdown-item>
+              </b-nav-item-dropdown>
+              <b-nav-item-dropdown text="User" right>
+                <b-dropdown-item href="#">Account</b-dropdown-item>
+                <b-dropdown-item href="#">Settings</b-dropdown-item>
+              </b-nav-item-dropdown>
+            </b-navbar-nav>
+          </b-collapse>
+        </b-navbar>
+      </div>
       <b-navbar class="navbar navbar-expand-lg navbar-light bg-light">
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
         <b-collapse is-nav id="nav_collapse">
@@ -28,8 +50,8 @@
               <b-dropdown-item :to="{ name: 'about_references_path' }">{{ $t('nav.about.references') }}</b-dropdown-item>
               <b-dropdown-item :to="{ name: 'about_feedbacks_path' }">{{ $t('nav.about.feedbacks') }}</b-dropdown-item>
             </b-nav-item-dropdown>
-            <b-nav-item href="/products" :class="activeOn(['products_path', 'doors_path', 'doors_result_path'])">{{ $t('nav.products') }}</b-nav-item>
-            <b-nav-item href="/galleries" :class="activeOn(['galleries_path'])">{{ $t('nav.galleries') }}</b-nav-item>
+            <b-nav-item :to="{ name: 'products_path' }" :class="activeOn(['products_path', 'doors_path','doors_result_path'])">{{ $t('nav.products') }}</b-nav-item>
+            <b-nav-item :to="{ name: 'galleries_path' }" :class="activeOn(['galleries_path'])">{{ $t('nav.galleries') }}</b-nav-item>
             <b-nav-item :to="{ name: 'furniture_path' }" :class="activeOn(['furniture_path'])">{{ $t('nav.furniture') }}</b-nav-item>
             <b-nav-item :to="{ name: 'price_path' }" :class="activeOn(['price_path'])">{{ $t('nav.price') }}</b-nav-item>
             <b-nav-item :to="{ name: 'contacts_path' }" :class="activeOn(['contacts_path'])">{{ $t('nav.contacts') }}</b-nav-item>
