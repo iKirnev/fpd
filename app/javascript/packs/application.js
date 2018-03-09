@@ -20,6 +20,7 @@ import Banners from './components/shared/_banners';
 Vue.component('banners', Banners);
 import Bestsellers from './components/shared/_bestsellers';
 Vue.component('bestsellers', Bestsellers);
+
 /*
 $.ajaxSetup({
   beforeSend: function(xhr) {
