@@ -5,21 +5,32 @@
       <div class="container">
         <div class="row">
           <nav-left></nav-left>
-          <div class="col">
-            <div class="catalog-block__title">Железные двери от производителя
-              <p></p>
-            </div>
-            <div class="catalog-block__list">
-              <div class="loading" v-if="loading">
-                Loading...
-              </div>
-              <template v-for="door in doors">
-                <a class="catalog-block__list-content-item" href="#">
-                  <div class="image"><img v-bind:src="'/assets/img_storage/' + door.model_path"></div>
-                  <p>{{ door.name }}</p><span>от {{ door.price }} руб.</span></a>
-              </template>
-            </div>
+
+
+
+<div class="col">
+          <div class="catalog">
+    <div class="container">
+        
+          <div class="catalog__title">Хиты продаж
+            <p>Если у вас возникли сложности с выбором, ознакомьтесь с предложением ниже. Это самые популярные двери, их чаще всего покупают. Список отсортирован по стоимости: от низкой к высокой.</p>
           </div>
+          <div class="catalog__wrap">
+                <div class="loading" v-if="loading">
+                  Loading...
+                </div>
+                <template v-for="door in doors">
+                  <a class="catalog__item" href="#">
+                    <div class="image"><img v-bind:src="'/assets/img_storage/' + door.model_path"></div>
+                    <p class="sub-title">{{ door.name }}</p>
+                    <p class="price">{{ door.price }} р.</p><span class="button">купить</span>
+                  </a>
+                </template>
+          </div>
+    </div>
+  </div>
+  </div>
+
         </div>
       </div>
     </main>
