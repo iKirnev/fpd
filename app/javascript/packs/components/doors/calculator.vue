@@ -52,20 +52,20 @@
                       </select><span class="stage-title">10.<b>УЛУЧШЕНИЯ:</b></span>
                       <div class="info-door__conf-col">
                         <label class="sb-checkbox">
-                          <input type="checkbox" v-model="improvements" value="eyehole"><span></span>Глазок
+                          <input type="checkbox" v-model="improvements" value="eye"><span></span>Глазок
                         </label>
                         <label class="sb-checkbox">
-                          <input type="checkbox" v-model="improvements" value="heater_box"><span></span>Утеплитель коробки + 500 р.
+                          <input type="checkbox" v-model="improvements" value="box"><span></span>Утеплитель коробки + 500 р.
                         </label>
                         <label class="sb-checkbox">
-                          <input type="checkbox" v-model="improvements" value="closer"><span></span>Доводчик + 1500 р.
+                          <input type="checkbox" v-model="improvements" value="cl"><span></span>Доводчик + 1500 р.
                         </label>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="calculator-block__wrap-price">
-                  <p>1080 р.*</p>
+                  <p>{{ total }} р.*</p>
                   <div class="price-row"><span class="stage-title">11.<b>ДОСТАВКА:</b></span>
                     <select>
                       <option>550mm</option>
@@ -99,11 +99,25 @@ export default {
     selectTab: function (event) {}
   },
   data () {
+    var q = this.$route.query;
     return {
-      width: 850,
-      height: 2050,
-      open_type: 'out',
-      improvements: []
+      width: q.w || 850,
+      height: q.h || 2050,
+      open_type: q.ot || 'out',
+      improvements: q.imvts && q.imvts.split(',') || []
+    }
+  },
+  computed: {
+    total: function () {
+      this.$router.replace({
+        path: 'calculator', query: {
+          w: this.width,
+          h: this.height,
+          ot: this.open_type,
+          imvts: this.improvements.length == 0 ? [] : this.improvements.join(',')
+        }
+      })
+      return this.width * 5
     }
   }
 }
