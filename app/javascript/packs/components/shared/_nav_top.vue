@@ -28,7 +28,7 @@
               <b-dropdown-item :to="{ name: 'about_references_path' }">{{ $t('nav.about.references') }}</b-dropdown-item>
               <b-dropdown-item :to="{ name: 'about_feedbacks_path' }">{{ $t('nav.about.feedbacks') }}</b-dropdown-item>
             </b-nav-item-dropdown>
-            <b-nav-item :to="{ name: 'products_path' }" :class="activeOn(['products_path', 'doors_path','doors_result_path'])">{{ $t('nav.products') }}</b-nav-item>
+            <b-nav-item :to="{ name: 'products_path' }" :class="activeOn(['products_path', 'doors_path','doors_result_path', 'doors_calculator_path'])">{{ $t('nav.products') }}</b-nav-item>
             <b-nav-item :to="{ name: 'galleries_path' }" :class="activeOn(['galleries_path'])">{{ $t('nav.galleries') }}</b-nav-item>
             <b-nav-item :to="{ name: 'furniture_path' }" :class="activeOn(['furniture_path'])">{{ $t('nav.furniture') }}</b-nav-item>
             <b-nav-item :to="{ name: 'price_path' }" :class="activeOn(['price_path'])">{{ $t('nav.price') }}</b-nav-item>

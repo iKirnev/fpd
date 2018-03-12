@@ -20,13 +20,13 @@
                     </div>
                   </div>
                   <div class="info-configuration"><span class="stage-title">3.<b>КОНФИГУРАЦИЯ:</b></span>
-                    <b-tabs>
-                      <b-tab @click="selectTab" active><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
-                      <b-tab @click="selectTab"><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
-                      <b-tab @click="selectTab"><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
-                      <b-tab @click="selectTab"><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
-                      <b-tab @click="selectTab"><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
-                      <b-tab @click="selectTab"><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
+                    <b-tabs v-model="layout_index">
+                      <b-tab><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
+                      <b-tab><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
+                      <b-tab><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
+                      <b-tab><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
+                      <b-tab><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
+                      <b-tab><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
                     </b-tabs>
                   </div>
                   <div class="info-door">
@@ -94,30 +94,51 @@ export default {
   components: {
     vueSlider
   },
-  methods: {
-    dragEnd: function (event) {},
-    selectTab: function (event) {}
-  },
   data () {
+    var lts = {
+      b: {idx:0, name: 'base'},
+      bt: {idx:1, name: 'base_top'},
+      bs: {idx:2, name: 'base_side'},
+      bts: {idx:3, name: 'base_top_side'},
+      db: {idx:4, name: 'double_base'},
+      dbt: {idx:5, name: 'double_base_top'}
+    }
+
     var q = this.$route.query;
     return {
       width: q.w || 850,
       height: q.h || 2050,
+      layout_index: q.lt && lts[q.lt].idx || lts.b.idx,
       open_type: q.ot || 'out',
-      improvements: q.imvts && q.imvts.split(',') || []
+      improvements: q.imvts && q.imvts.split(',') || [],
+      layouts: lts
     }
   },
   computed: {
     total: function () {
+      this.setPath();
+      return this.width * 5;
+    }
+  },
+  methods: {
+    dragEnd: function (event) {},
+    setPath: function () {
+      var lt_key = 'b';
+      for(var key in this.layouts) {
+          if (this.layouts[key].idx == this.layout_index) {
+              lt_key = key;
+              break;
+          }
+      }
       this.$router.replace({
         path: 'calculator', query: {
           w: this.width,
           h: this.height,
+          lt: lt_key,
           ot: this.open_type,
           imvts: this.improvements.length == 0 ? [] : this.improvements.join(',')
         }
       })
-      return this.width * 5
     }
   }
 }
