@@ -21,12 +21,7 @@
                   </div>
                   <div class="info-configuration"><span class="stage-title">3.<b>КОНФИГУРАЦИЯ:</b></span>
                     <b-tabs v-model="layout_index">
-                      <b-tab><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
-                      <b-tab><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
-                      <b-tab><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
-                      <b-tab><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
-                      <b-tab><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
-                      <b-tab><template slot="title"><img src="/assets/conf-image.png"></template></b-tab>
+                      <b-tab v-for="layout in layouts"><template slot="title"><img v-bind:src="'/assets/img_storage/doors/layouts/icons/' + layout.name + '.png'"></template></b-tab>
                     </b-tabs>
                   </div>
                   <div class="info-door">
@@ -47,9 +42,13 @@
                           <input type="radio" v-model="open_type" value="in" ><span></span>Во внутрь + 600 р.
                         </label>
                       </div><span class="stage-title">9.<b>ЗАМКИ:</b></span>
-                      <select>
-                        <option>850mm</option>
-                      </select><span class="stage-title">10.<b>УЛУЧШЕНИЯ:</b></span>
+                      <b-form-select v-model="lock">
+                        <option value="pro_pro">Верхний: «ПРО-САМ», нижний: «ПРО-САМ»</option>
+                        <option value="pro_kal" >Верхний: ПРО-САМ, нижний: Kale-2000</option>
+                        <option value="met_straj">Верхний: МЕТТЭМ, нижний: Страж</option>
+                        <option value="kal_kal">Верхний: Kale 257-L, нижний: Kale 252-R</option>
+                      </b-form-select>
+                      <span class="stage-title">10.<b>УЛУЧШЕНИЯ:</b></span>
                       <div class="info-door__conf-col">
                         <label class="sb-checkbox">
                           <input type="checkbox" v-model="improvements" value="eye"><span></span>Глазок
@@ -67,14 +66,18 @@
                 <div class="calculator-block__wrap-price">
                   <p>{{ total }} р.*</p>
                   <div class="price-row"><span class="stage-title">11.<b>ДОСТАВКА:</b></span>
-                    <select>
-                      <option>550mm</option>
-                    </select>
+                    <b-form-select v-model="delivery">
+                      <option value="no">Не требуется</option>
+                      <option value="in" >В пределах МКАД   + 25 км</option>
+                      <option value="out">За МКАД 25 - 100 км</option>
+                    </b-form-select>
                   </div>
                   <div class="price-row"><span class="stage-title">12.<b>УСТАНОВКА:</b></span>
-                    <select>
-                      <option>550mm</option>
-                    </select>
+                    <b-form-select v-model="install">
+                      <option value="no">Не требуется</option>
+                      <option value="only" >Только установка</option>
+                      <option value="deinst">Демонтаж старой двери и установка</option>
+                    </b-form-select>
                   </div>
                   <a class="button" href="#">оформить заявку</a>
                 </div>
@@ -94,26 +97,6 @@ import vueSlider from 'vue-slider-component';
 export default {
   components: {
     vueSlider
-  },
-  data () {
-    var lts = {
-      b: {idx:0, name: 'base'},
-      bt: {idx:1, name: 'base_top'},
-      bs: {idx:2, name: 'base_side'},
-      bts: {idx:3, name: 'base_top_side'},
-      db: {idx:4, name: 'double_base'},
-      dbt: {idx:5, name: 'double_base_top'}
-    }
-
-    var q = this.$route.query;
-    return {
-      width: q.w || 850,
-      height: q.h || 2050,
-      layout_index: q.lt && lts[q.lt].idx || lts.b.idx,
-      open_type: q.ot || 'out',
-      improvements: q.imvts && q.imvts.split(',') || [],
-      layouts: lts
-    }
   },
   computed: {
     total: function () {
@@ -137,10 +120,36 @@ export default {
           h: this.height,
           lt: lt_key,
           ot: this.open_type,
-          imvts: this.improvements.length == 0 ? [] : this.improvements.join(',')
+          lock: this.lock,
+          imvts: this.improvements.length == 0 ? [] : this.improvements.join(','),
+          del: this.delivery,
+          inst: this.install
         }
       })
     }
-  }
+  },
+  data () {
+    var lts = {
+      b: {idx:0, name: 'base'},
+      bt: {idx:1, name: 'base_top'},
+      bs: {idx:2, name: 'base_side'},
+      bts: {idx:3, name: 'base_top_side'},
+      db: {idx:4, name: 'double_base'},
+      dbt: {idx:5, name: 'double_base_top'}
+    }
+
+    var q = this.$route.query;
+    return {
+      width: q.w || 850,
+      height: q.h || 2050,
+      layout_index: q.lt && lts[q.lt].idx || lts.b.idx,
+      layouts: lts,
+      open_type: q.ot || 'out',
+      lock: q.lock || 'pro_pro',
+      improvements: q.imvts && q.imvts.split(',') || [],
+      delivery: q.del || 'no',
+      install: q.inst || 'no'
+    }
+  },
 }
 </script>
