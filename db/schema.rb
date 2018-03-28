@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305211109) do
+ActiveRecord::Schema.define(version: 20180328191332) do
 
   create_table "accessories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 20180305211109) do
     t.bigint "accessory_id", null: false
     t.index ["accessory_id", "product_id"], name: "index_accessories_products_on_accessory_id_and_product_id"
     t.index ["product_id", "accessory_id"], name: "index_accessories_products_on_product_id_and_accessory_id"
+  end
+
+  create_table "constructions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.string "name"
+    t.text "description"
   end
 
   create_table "galleries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
@@ -39,19 +44,22 @@ ActiveRecord::Schema.define(version: 20180305211109) do
     t.index ["gallery_id"], name: "index_gallery_photos_on_gallery_id"
   end
 
-  create_table "musicians", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "price_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
-    t.integer "band"
+    t.string "price_range"
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.decimal "price", precision: 10, scale: 2
     t.string "model_path"
-    t.string "cut_path"
+    t.string "a_key"
+    t.string "model_small_path"
+    t.integer "price_type"
+    t.string "model_constr_path"
+    t.string "model_constr_small_path"
+    t.integer "construct_id"
   end
 
   create_table "products_stuffs", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
@@ -71,23 +79,6 @@ ActiveRecord::Schema.define(version: 20180305211109) do
   create_table "stuffs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.string "name"
     t.string "description"
-  end
-
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "email"
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "uses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|

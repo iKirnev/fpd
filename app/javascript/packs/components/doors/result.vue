@@ -17,8 +17,8 @@
                   </div>
                   <template v-for="door in doors">
                     <a class="catalog__item" href="#">
-                      <div class="image"><img v-bind:src="'/assets/img_storage/' + door.model_path"></div>
-                      <p class="sub-title">{{ door.name }}</p>
+                      <div class="image"><img v-bind:src="'/assets/img_storage/doors/models/' + door.model_small_path"></div>
+                      <p class="sub-title">{{ door.a_key }} {{ door.name }}</p>
                       <p class="price">{{ door.price }} р.</p><span class="button">купить</span>
                     </a>
                   </template>

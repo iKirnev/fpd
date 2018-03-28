@@ -42,6 +42,9 @@ en:
             forg-glass: "С ковкой и стеклом"
             stained-glass: "С витражом"
             photo: "С фотопечатью"
+            vinilis-leather: "Винилискожа"
+            stained: "Стальная"
+            forg: "C ковкой"
         use:
             apartment: "В квартиру"
             entrance: "Подъездные"
