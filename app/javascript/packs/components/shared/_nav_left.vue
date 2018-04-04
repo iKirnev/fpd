@@ -1,5 +1,5 @@
 <template>
-  <b-navbar class="navbar-expand-md">
+  <b-navbar class="navbar-expand-lg">
     <b-collapse is-nav id="nav_collapse">
       <b-nav vertical class="sidebar-nav">
         	<b-nav-text><span class="flag"></span><h2>{{ $t('nav_left.catalog') }}</h2></b-nav-text>
