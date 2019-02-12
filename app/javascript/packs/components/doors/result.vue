@@ -16,11 +16,11 @@
                     Loading...
                   </div>
                   <template v-for="door in doors">
-                    <a class="catalog__item" href="#">
+                    <router-link class="catalog__item" :to="{name: 'door_details_path', params: { slug: door.slug}}">
                       <div class="image"><img v-bind:src="'/assets/img_storage/doors/models/' + door.model_small_path"></div>
                       <p class="sub-title">{{ door.a_key }} {{ door.name }}</p>
                       <p class="price">{{ door.price }} р.</p><span class="button">купить</span>
-                    </a>
+                    </router-link>
                   </template>
                 </div>
               </div>

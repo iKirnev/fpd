@@ -11,7 +11,7 @@ const DoorStore = {
       return state;
     },
     many(state, data) {
-      state.doors= data.doors;
+      state.doors= data;
       return state;
     },
     loading(state, val) {
