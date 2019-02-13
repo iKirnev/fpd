@@ -10,4 +10,8 @@ class Api::DoorsController < Api::ApiController
     @door = Product.find(params[:id])
   end
 
+  def menu
+    @menu = {uses: Use.all, stuffs: Stuff.all}
+  end
+
 end
